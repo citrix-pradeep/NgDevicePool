@@ -20,7 +20,6 @@ import { DevicedetailComponent } from './devicedetail/devicedetail.component';
     RegisterComponent,
     HomeComponent,
     NavBarComponent,
-    DevicedetailComponent
   ],
   imports: [
     BrowserModule,
