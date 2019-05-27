@@ -1,0 +1,70 @@
+<div class="medium-list">
+  <div class="list-viewer-wrapper">
+    <div class="list-header-title">Device Detail</div> 
+    <div class="row">
+      <div class="col-lg-3">
+        <label>Mac Id</label>
+        <input [(value)]="deviceDetail.MacId">
+      </div>
+      <div class="col-lg-3">
+        <label>CRC</label>
+        <input [(value)]="deviceDetail.CRC">
+      </div>
+      <div class="col-lg-3">
+        <label>Device Types</label>
+        <input [(value)]="deviceDetail.DeviceType">
+      </div>
+      <div class="col-lg-3">
+        <label>OS Index</label>
+        <input [(value)]="deviceDetail.OSIndex">
+      </div>
+      <div class="col-lg-3">
+        <label>Software Version</label>
+        <input [(value)]="deviceDetail.SoftwareVersion">
+      </div>
+
+      <button >Ban Device</button>
+    </div> 
+
+    <div id="Status">
+        <label *ngFor= "let status of deviceDetail.Status" ><input type="checkbox" value="">{{ status }}</label>      
+    </div>
+
+    <!-- <form [formGroup]="deviceDetailForm" (ngSubmit)="" novalidate>
+      <div class="form-container">
+        <mat-form-field>
+          <input id="name"
+                 matInput
+                 formControlName="name"
+                 [(ngModel)]="user.name"
+                 placeholder="Enter your name" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input id="email"
+                   matInput
+                   formControlName="email"
+                   [(ngModel)]="user.email"
+                   placeholder="Enter your email" />
+          </mat-form-field>
+
+        <mat-form-field>
+            <input id="password"
+                   matInput
+                   formControlName="password"
+                   [(ngModel)]="user.password"
+                   placeholder="Enter your password"
+                   [type]="hide ? 'password':'text'" />
+                   <mat-icon matSuffix (click)="hide = !hide">
+                      {{hide ? 'visibility' : 'visibility_off'}}
+                    </mat-icon>
+          </mat-form-field>
+
+          <button mat-button type="submit" 
+                  class="mat-raised-button mat-primary" 
+                  [disabled]="!registerForm.valid">Register</button>
+          <button mat-button routerLink="/login" class="divider">Login</button> 
+      </div>
+    </form> -->
+  </div>
+</div>

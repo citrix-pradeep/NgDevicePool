@@ -6,4 +6,5 @@ export class DeviceDetail {
     SoftwareVersion: string
     LockUntil: Date
     BanUntil: Date
+    Status: string[]
 }
