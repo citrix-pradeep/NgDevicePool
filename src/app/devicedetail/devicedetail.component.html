@@ -1,29 +1,32 @@
 <div class="medium-list">
   <div class="list-viewer-wrapper">
     <div class="list-header-title">Device Detail</div> 
-    <div class="row">
-      <div class="col-lg-3">
-        <label>Mac Id</label>
-        <input [(value)]="deviceDetail.MacId">
+    <div class="row deviceDetail">
+      <div class="col-xs-4 col-md-4">
+        <label for="mac">Mac Id</label>
+        <input [(value)]="deviceDetail.MacId" id="mac" class="form-control">
       </div>
-      <div class="col-lg-3">
-        <label>CRC</label>
-        <input [(value)]="deviceDetail.CRC">
+      <!-- <div class="col-xs-4 col-md-4">
+          <label for="name" class="control-label">Line Height</label>
+          <input type="email" value='' class="form-control" id="name" placeholder="Ime">
+      </div> -->
+      <div class="col-xs-4 col-md-4">
+        <label for="crc">CRC</label>
+        <input [(value)]="deviceDetail.CRC" id="crc" class="form-control">
       </div>
-      <div class="col-lg-3">
-        <label>Device Types</label>
-        <input [(value)]="deviceDetail.DeviceType">
+      <div class="col-xs-4 col-md-4">
+        <label for="devicetype">Device Types</label>
+        <input [(value)]="deviceDetail.DeviceType" id="devicetype" class="form-control">
       </div>
-      <div class="col-lg-3">
-        <label>OS Index</label>
-        <input [(value)]="deviceDetail.OSIndex">
+      <div class="col-xs-4 col-md-4">
+        <label for="osindex">OS Index</label>
+        <input [(value)]="deviceDetail.OSIndex" id="osindex" class="form-control">
       </div>
-      <div class="col-lg-3">
-        <label>Software Version</label>
-        <input [(value)]="deviceDetail.SoftwareVersion">
+      <div class="col-xs-4 col-md-4">
+        <label for="sfversion">Software Version</label>
+        <input [(value)]="deviceDetail.SoftwareVersion" id="sfversion" class="form-control">
       </div>
-
-      <button >Ban Device</button>
+      <button mat-raised-button color="primary" class="col-xs-4 col-md-4 banDevice-button form-control">Ban Device</button>
     </div> 
 
     <div id="Status">
