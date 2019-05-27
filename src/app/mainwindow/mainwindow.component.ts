@@ -5,6 +5,11 @@ export interface Food {
   value: string;
   viewValue: string;
 }
+const ELEMENT_DATA: DeviceDetail[] = [
+  new DeviceDetail('00d02d64fcab','3455','NADevice','530','12133',new Date(),new Date()),
+  new DeviceDetail('00d02d64FCB1','3444','NADevice','530','144433',new Date(),new Date()),
+ ];
+
 @Component({
   selector: 'app-mainwindow',
   templateUrl: './mainwindow.component.html',
@@ -20,10 +25,7 @@ export class MainwindowComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  const ELEMENT_DATA: DeviceDetail[] = [
-   new DeviceDetail('00d02d64fcab','3455','NADevice','530','12133',new Date(),new Date()),
-   new DeviceDetail('00d02d64FCB1','3444','NADevice','530','144433',new Date(),new Date()),
-  ];
+  
   
   constructor() { }
   ngOnInit() {

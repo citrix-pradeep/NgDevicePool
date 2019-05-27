@@ -8,16 +8,11 @@ import { DeviceDetail } from './../models/deviceDetail.model';
   styleUrls: ['./devicedetail.component.scss']
 })
 export class DevicedetailComponent implements OnInit {
-  deviceDetail: DeviceDetail = new DeviceDetail();  
+  deviceDetail: DeviceDetail; 
   constructor() { }
 
   ngOnInit() {
-    this.deviceDetail.MacId = "00FCAB";
-    this.deviceDetail.CRC = "58DC";
-    this.deviceDetail.DeviceType = "NA";
-    this.deviceDetail.OSIndex = "540";
-    this.deviceDetail.SoftwareVersion = "02.09";
-    this.deviceDetail.Status = ["Offline","Online"];
+    this.deviceDetail = new DeviceDetail("00FCAB","58DC","NA","540", "02.09",new Date(), new Date());
   }
 
 }
