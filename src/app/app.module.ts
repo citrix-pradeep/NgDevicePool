@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DevicedetailComponent } from './devicedetail/devicedetail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientXsrfModule } from '@angular/common/http';
+import { DevicePoolService } from './services/device-pool.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,15 @@ import { DevicedetailComponent } from './devicedetail/devicedetail.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'My-Xsrf-Cookie',
+      headerName: 'My-Xsrf-Header',
+    }),
   ],
-  providers: [],
+  providers: [DevicePoolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

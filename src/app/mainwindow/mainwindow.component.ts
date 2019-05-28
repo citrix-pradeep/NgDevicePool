@@ -1,5 +1,6 @@
 import { DeviceDetail } from './../models/deviceDetail.model';
 import { Component, OnInit } from '@angular/core';
+import { DevicePoolService } from '../services/device-pool.service';
 
 export interface Food {
   value: string;
@@ -22,13 +23,20 @@ export class MainwindowComponent implements OnInit {
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['MacId', 'DeviceType', 'OsIndex', 'LastUpdated'];
+  dataSource:any;
 
   
   
-  constructor() { }
+  constructor(private devicepoolService : DevicePoolService) { 
+  
+  }
   ngOnInit() {
+    this.devicepoolService.getDeviceAsync().subscribe(data => {
+      
+      this.dataSource = data;
+
+    })
   }
 
 
