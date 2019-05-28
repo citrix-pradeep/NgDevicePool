@@ -29,45 +29,14 @@
       <button mat-raised-button color="primary" class="col-xs-4 col-md-4 banDevice-button form-control">Ban Device</button>
     </div> 
 
-    <div id="Status">
-        <label *ngFor= "let status of deviceDetail.Status" ><input type="checkbox" value="">{{ status }}</label>      
-    </div>
-
-    <!-- <form [formGroup]="deviceDetailForm" (ngSubmit)="" novalidate>
-      <div class="form-container">
-        <mat-form-field>
-          <input id="name"
-                 matInput
-                 formControlName="name"
-                 [(ngModel)]="user.name"
-                 placeholder="Enter your name" />
-        </mat-form-field>
-
-        <mat-form-field>
-            <input id="email"
-                   matInput
-                   formControlName="email"
-                   [(ngModel)]="user.email"
-                   placeholder="Enter your email" />
-          </mat-form-field>
-
-        <mat-form-field>
-            <input id="password"
-                   matInput
-                   formControlName="password"
-                   [(ngModel)]="user.password"
-                   placeholder="Enter your password"
-                   [type]="hide ? 'password':'text'" />
-                   <mat-icon matSuffix (click)="hide = !hide">
-                      {{hide ? 'visibility' : 'visibility_off'}}
-                    </mat-icon>
-          </mat-form-field>
-
-          <button mat-button type="submit" 
-                  class="mat-raised-button mat-primary" 
-                  [disabled]="!registerForm.valid">Register</button>
-          <button mat-button routerLink="/login" class="divider">Login</button> 
+    <div id="Status" class="overflow-auto">
+      <div class="col-xs-12 col-md-12 " *ngFor= "let status of deviceDetail.Status">
+          <label  >
+              <input type="checkbox" value="">
+              {{ status }}
+            </label>  
       </div>
-    </form> -->
+            
+    </div>
   </div>
 </div>

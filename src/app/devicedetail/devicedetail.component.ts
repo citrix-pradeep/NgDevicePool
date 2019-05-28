@@ -13,6 +13,7 @@ export class DevicedetailComponent implements OnInit {
 
   ngOnInit() {
     this.deviceDetail = new DeviceDetail("00FCAB","58DC","NA","540", "02.09",new Date(), new Date());
+    this.deviceDetail.Status = ["Offline","Online","Offline","Online","Offline","Online","Offline","Online"];
   }
 
 }
