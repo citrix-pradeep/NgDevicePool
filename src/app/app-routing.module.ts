@@ -18,10 +18,10 @@ const routes: Routes = [{
   path:'register',
   component:RegisterComponent
 },
-{
-  path: 'deviceDetail',
-  component:DevicedetailComponent
-}
+// {
+//   path: 'deviceDetail',
+//   component:DevicedetailComponent
+// }
 ];
 
 @NgModule({

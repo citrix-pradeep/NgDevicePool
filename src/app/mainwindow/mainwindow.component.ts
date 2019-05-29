@@ -1,6 +1,8 @@
 import { DeviceDetail } from './../models/deviceDetail.model';
 import { Component, OnInit } from '@angular/core';
 import { DevicePoolService } from '../services/device-pool.service';
+import { MatDialog } from '@angular/material';
+import { DevicedetailComponent } from '../devicedetail/devicedetail.component';
 
 export interface Food {
   value: string;
@@ -28,14 +30,24 @@ export class MainwindowComponent implements OnInit {
 
   
   
-  constructor(private devicepoolService : DevicePoolService) { 
+  constructor(private devicepoolService: DevicePoolService,
+    public dialog: MatDialog) { 
   
   }
+  openDialog(deviceDetails: DeviceDetail): void {
+    const dialogRef = this.dialog.open(DevicedetailComponent, {
+      width: '800px',
+      data: deviceDetails
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
   ngOnInit() {
     this.devicepoolService.getDeviceAsync().subscribe(data => {
-      
       this.dataSource = data;
-
     })
   }
 

@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DevicedetailComponent } from './devicedetail/devicedetail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
@@ -30,6 +30,7 @@ import { DevicePoolService } from './services/device-pool.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule ,
+    FormsModule,
     ReactiveFormsModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
@@ -39,6 +40,7 @@ import { DevicePoolService } from './services/device-pool.service';
     }),
   ],
   providers: [DevicePoolService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DevicedetailComponent]
 })
 export class AppModule { }

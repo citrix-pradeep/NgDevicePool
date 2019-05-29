@@ -14,7 +14,7 @@ const httpOptions = {
 })
 
 export class DevicePoolService {  
-  baseURL = "http://localhost:63714/"
+  baseURL = "http://ie3pvw020/NgdevicePool/"
   constructor(private http : HttpClient) {
 
    }

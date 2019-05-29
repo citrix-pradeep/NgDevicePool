@@ -4,7 +4,7 @@
     <div class="row deviceDetail">
       <div class="col-xs-4 col-md-4">
         <label for="mac">Mac Id</label>
-        <input [(value)]="deviceDetail.MacId" id="mac" class="form-control">
+        <input [(ngModel)]="deviceDetail.MacId" id="mac" class="form-control">
       </div>
       <!-- <div class="col-xs-4 col-md-4">
           <label for="name" class="control-label">Line Height</label>
@@ -12,11 +12,11 @@
       </div> -->
       <div class="col-xs-4 col-md-4">
         <label for="crc">CRC</label>
-        <input [(value)]="deviceDetail.CRC" id="crc" class="form-control">
+        <input [(ngModel)]="deviceDetail.Crc" id="crc" class="form-control">
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="devicetype">Device Types</label>
-        <!-- <input [(value)]="deviceDetail.DeviceType" id="devicetype" class="form-control"> -->
+        <!-- <input [(ngModel)]="deviceDetail.DeviceType" id="devicetype" class="form-control"> -->
         <div class="dropdown">
           <button class="dropdown-toggle form-control" data-toggle="dropdown">NA
             <span class="caret"></span>
@@ -28,11 +28,11 @@
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="osindex">OS Index</label>
-        <input [(value)]="deviceDetail.OSIndex" id="osindex" class="form-control">
+        <input [(ngModel)]="deviceDetail.OsIndex" id="osindex" class="form-control">
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="sfversion">Software Version</label>
-        <input [(value)]="deviceDetail.SoftwareVersion" id="sfversion" class="form-control">
+        <input [(ngModel)]="deviceDetail.SoftwareVersion" id="sfversion" class="form-control">
       </div>
       <button mat-raised-button color="primary" class="col-xs-4 col-md-4 banDevice-button form-control">Ban Device</button>
     </div> 
