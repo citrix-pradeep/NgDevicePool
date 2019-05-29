@@ -16,7 +16,15 @@
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="devicetype">Device Types</label>
-        <input [(value)]="deviceDetail.DeviceType" id="devicetype" class="form-control">
+        <!-- <input [(value)]="deviceDetail.DeviceType" id="devicetype" class="form-control"> -->
+        <div class="dropdown">
+          <button class="dropdown-toggle form-control" data-toggle="dropdown">NA
+            <span class="caret"></span>
+          </button>         
+          <ul class="dropdown-menu">
+            <li><a href="#">EMEA</a></li>
+          </ul>
+        </div>
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="osindex">OS Index</label>
@@ -29,14 +37,23 @@
       <button mat-raised-button color="primary" class="col-xs-4 col-md-4 banDevice-button form-control">Ban Device</button>
     </div> 
 
-    <div id="Status" class="overflow-auto">
-      <div class="col-xs-12 col-md-12 " *ngFor= "let status of deviceDetail.Status">
+    <div id="Status" class="overflow-auto deviceDetail">
+      <div class="col-xs-12 col-md-12" *ngFor= "let status of deviceDetail.Status">
           <label  >
               <input type="checkbox" value="">
               {{ status }}
             </label>  
-      </div>
-            
+      </div>            
     </div>
-  </div>
+     <div id="footdevicedetail" class="row deviceDetail">
+       <div class="col-xs-4 col-md-4">
+         <button mat-raised-button color="primary" class="form-control" (click)="UpdateDevice()">Update</button>
+       </div>
+       <div class="col-xs-4 col-md-4">
+          <button mat-raised-button color="primary" class="form-control" (click)="DeleteDevice()">Delete</button>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <button mat-raised-button color="primary" class="form-control" >Cancel</button>
+          </div>
+      </div> 
 </div>

@@ -23,7 +23,7 @@ export class MainwindowComponent implements OnInit {
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
 
-  displayedColumns: string[] = ['MacId', 'DeviceType', 'OsIndex', 'LastUpdated'];
+  displayedColumns: string[] = ['MacId', 'DeviceType', 'OsIndex', 'LastUpdated', 'Details'];
   dataSource:any;
 
   

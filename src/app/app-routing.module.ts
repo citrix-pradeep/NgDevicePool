@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { DevicedetailComponent } from './devicedetail/devicedetail.component';
+import { MainwindowComponent } from './mainwindow/mainwindow.component';
 
 const routes: Routes = [{
   path:'',
-  component:HomeComponent
+  component: MainwindowComponent
 },
 {
   path:'login',

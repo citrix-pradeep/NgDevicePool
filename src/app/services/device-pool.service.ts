@@ -14,11 +14,20 @@ const httpOptions = {
 })
 
 export class DevicePoolService {  
+  baseURL = "http://localhost:63714/"
   constructor(private http : HttpClient) {
 
    }
 
    getDeviceAsync() : Observable<DeviceDetail> {
-     return this.http.get<DeviceDetail>("http://localhost:63714/api/device");
-   }
+    return this.http.get<DeviceDetail>(this.baseURL + "api/device");
+  }
+
+  updateDevice(DeviceDetail) : Observable<any>{
+    return this.http.put<any>(this.baseURL + "api/device?macId=" + DeviceDetail.macId, DeviceDetail);
+  } 
+
+  deleteDevice(macId : string) : Observable<any>{
+    return this.http.delete<any>(this.baseURL + "api/device?macId=" + macId );
+  }
 }
