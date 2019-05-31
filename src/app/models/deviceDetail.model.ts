@@ -1,20 +1,21 @@
 export class DeviceDetail {
     MacId: string
     CRC: string
-    DeviceType: string
+    DeviceType: DeviceType
     OSIndex: string
     SoftwareVersion: string
     LockUntil: Date
     BanUntil: Date
-    Status: string[]
+    Parameters : Parameter[]
     constructor(
         macId: string,
         crc: string,
-        deviceType: string,
+        deviceType: DeviceType,
         osIndex: string,
         swVersion: string,
         lockUntil: Date,
-        banUntil: Date
+        banUntil: Date,
+        parameters: Parameter[]
     ){
         this.MacId = macId;
         this.CRC = crc;
@@ -23,5 +24,22 @@ export class DeviceDetail {
         this.SoftwareVersion = swVersion;
         this.LockUntil = lockUntil;
         this.BanUntil = banUntil;
+        this.Parameters = parameters;
     }
 }
+
+export class DeviceType {
+    TypeName : string
+}
+
+export class Parameter {
+    ParameterName : string
+    IsExclusive : boolean
+}
+
+export class NewDeviceRequest {
+    DeviceType: DeviceType
+    MacId: string
+    CRC: string
+}
+

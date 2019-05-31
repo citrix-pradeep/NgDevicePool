@@ -1,53 +1,49 @@
-<div class="medium-list">
+<div class="medium-list" [formGroup]="fb">
   <div class="list-viewer-wrapper">
     <div class="list-header-title">Device Detail</div> 
     <div class="row deviceDetail">
       <div class="col-xs-4 col-md-4">
         <label for="mac">Mac Id</label>
-        <input [(ngModel)]="deviceDetail.MacId" id="mac" class="form-control">
-      </div>
-      <!-- <div class="col-xs-4 col-md-4">
-          <label for="name" class="control-label">Line Height</label>
-          <input type="email" value='' class="form-control" id="name" placeholder="Ime">
-      </div> -->
+        <input formControlName="MacId" class="form-control">
+      </div>      
       <div class="col-xs-4 col-md-4">
         <label for="crc">CRC</label>
-        <input [(ngModel)]="deviceDetail.Crc" id="crc" class="form-control">
+        <input formControlName="CRC" id="crc" class="form-control">
       </div>
       <div class="col-xs-4 col-md-4">
-        <label for="devicetype">Device Types</label>
-        <!-- <input [(ngModel)]="deviceDetail.DeviceType" id="devicetype" class="form-control"> -->
-        <div class="dropdown">
+        <label for="devicetype">Device Type</label>
+         <input formControlName="DeviceType" id="devicetype" class="form-control"> 
+        <!-- <div class="dropdown">
           <button class="dropdown-toggle form-control" data-toggle="dropdown">NA
             <span class="caret"></span>
           </button>         
           <ul class="dropdown-menu">
             <li><a href="#">EMEA</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="osindex">OS Index</label>
-        <input [(ngModel)]="deviceDetail.OsIndex" id="osindex" class="form-control">
+        <input  class="form-control">
       </div>
       <div class="col-xs-4 col-md-4">
         <label for="sfversion">Software Version</label>
-        <input [(ngModel)]="deviceDetail.SoftwareVersion" id="sfversion" class="form-control">
+        <input class="form-control">
       </div>
       <button mat-raised-button color="primary" class="col-xs-4 col-md-4 banDevice-button form-control">Ban Device</button>
     </div> 
 
-    <div id="Status" class="overflow-auto deviceDetail">
-      <div class="col-xs-12 col-md-12" *ngFor= "let status of deviceDetail.Status">
+    <!-- <div id="Status" class="overflow-auto deviceDetail">
+      <div class="col-xs-12 col-md-12" *ngFor= "let status of deviceDetail.Parameters">
           <label  >
-              <input type="checkbox" value="">
-              {{ status }}
+              <input type="checkbox" [checked] ="status.IsExclusive">
+              {{ status.ParameterName }}
             </label>  
       </div>            
-    </div>
+    </div> -->
      <div id="footdevicedetail" class="row deviceDetail">
        <div class="col-xs-4 col-md-4">
-         <button mat-raised-button color="primary" class="form-control" (click)="UpdateDevice()">Update</button>
+         <button mat-raised-button color="primary" class="form-control" (click)="SaveDevice()" value="buttonText">{{buttonText}}</button>
        </div>
        <div class="col-xs-4 col-md-4">
           <button mat-raised-button color="primary" class="form-control" (click)="DeleteDevice()">Delete</button>

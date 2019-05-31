@@ -23,11 +23,17 @@ export class DevicePoolService {
     return this.http.get<DeviceDetail>(this.baseURL + "api/device");
   }
 
+  addDevice(NewDeviceRequest): Observable<any>{
+    return this.http.post<any>(this.baseURL + "api/device",NewDeviceRequest);
+  }
+  
   updateDevice(DeviceDetail) : Observable<any>{
-    return this.http.put<any>(this.baseURL + "api/device?macId=" + DeviceDetail.macId, DeviceDetail);
+    return this.http.put<any>(this.baseURL + "api/device?macId=" + DeviceDetail.MacId, DeviceDetail);
   } 
 
   deleteDevice(macId : string) : Observable<any>{
     return this.http.delete<any>(this.baseURL + "api/device?macId=" + macId );
   }
+
+
 }
